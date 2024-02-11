@@ -3,7 +3,7 @@ const computer = document.querySelector("#computer");
 const controls = document.querySelector("#controls");
 
 const playerImage = document.createElement("img");
-playerImage.setAttribute("src", "assets/img1.png");
+playerImage.setAttribute("src", "assets/img3.png");
 const computerImage = document.createElement("img");
 computerImage.setAttribute("src", "assets/img1.png");
 
@@ -35,15 +35,23 @@ controls.append(btn1);
 controls.append(btn3);
 
 const clickListener = (button) => {
+    
+    let i = 1;
+    i = Math.floor(Math.random() * 3) + 1;
+
     if(button === btn1){
-        playerImage.setAttribute("src", "assets/img1.png");
+        playerImage.setAttribute(`src`, `assets/img1.png`);
+        computerImage.setAttribute(`src`, `assets/img${i}.png`);
     }
     else if(button === btn2){
-        playerImage.setAttribute("src", "assets/img2.png");
+        playerImage.setAttribute(`src`, `assets/img2.png`);
+        computerImage.setAttribute(`src`, `assets/img${i}.png`);
     }
     else{
-        playerImage.setAttribute("src", "assets/img3.png");
+        playerImage.setAttribute(`src`, `assets/img3.png`);
+        computerImage.setAttribute(`src`, `assets/img${i}.png`);
     }
+
 }
 
 btn1.addEventListener("click", () => { clickListener(btn1) });
