@@ -1,6 +1,7 @@
 const player = document.querySelector("#player");
 const computer = document.querySelector("#computer");
 const controls = document.querySelector("#controls");
+const title = document.querySelector("#title");
 
 const playerImage = document.createElement("img");
 playerImage.setAttribute("src", "assets/img3.png");
@@ -34,6 +35,21 @@ controls.append(btn2);
 controls.append(btn1);
 controls.append(btn3);
 
+let p = 0; //Player move monitor
+let c = 0; //Computer move monitor
+
+const checkWinner = () => {
+    if(p === 1 && c === 2 || p === 2 && c === 3 || p === 3 && c === 1){
+        title.innerText = `You Won!`
+    }
+    else if(p === 1 && c === 1 || p === 2 && c === 2 || p === 3 && c === 3){
+        title.innerText = `Draw`
+    }
+    else{
+        title.innerText = `Computer Won!!`
+    }
+}
+
 const clickListener = (button) => {
     
     let i = 1;
@@ -41,15 +57,24 @@ const clickListener = (button) => {
 
     if(button === btn1){
         playerImage.setAttribute(`src`, `assets/img1.png`);
+        p = 1;
         computerImage.setAttribute(`src`, `assets/img${i}.png`);
+        c = i;
+        checkWinner();
     }
     else if(button === btn2){
         playerImage.setAttribute(`src`, `assets/img2.png`);
+        p = 2;
         computerImage.setAttribute(`src`, `assets/img${i}.png`);
+        c = i;
+        checkWinner();
     }
     else{
         playerImage.setAttribute(`src`, `assets/img3.png`);
+        p = 3;
         computerImage.setAttribute(`src`, `assets/img${i}.png`);
+        c = i;
+        checkWinner();
     }
 
 }
