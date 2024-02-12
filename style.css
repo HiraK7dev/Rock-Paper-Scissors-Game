@@ -62,12 +62,14 @@ img{
     background-color: rgb(255, 99, 195);
     color: rgb(26, 26, 26);
 }
-#title{
+#title, #title2, #title3{
     display: flex;
     justify-content: center;
     color: white;
     width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#title{
     animation: glow 1s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glow {
@@ -79,10 +81,34 @@ img{
    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
+#title2{
+    animation: glow2 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow2 {
+    from {
+     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e613, 0 0 40px #08e600, 0 0 50px #00e61f, 0 0 60px #00e626, 0 0 70px #08e600;
+   }
+     
+    to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #4dff4d, 0 0 40px #4dff56, 0 0 50px #4dff6b, 0 0 60px #4dff5c, 0 0 70px #4dff65, 0 0 80px #53ff4d;
+   }
+ }
+ #title3{
+    animation: glow3 1s ease-in-out infinite alternate;
+}
+ @-webkit-keyframes glow3 {
+    from {
+     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+   }
+     
+    to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
+   }
+ }
 
 /*Media Queries*/
 @media(max-width: 500px){
-    #title{
+    #title, #title2, #title3{
         font-size: 20px;
     }
     .label{

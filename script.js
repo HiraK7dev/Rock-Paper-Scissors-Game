@@ -41,12 +41,15 @@ let c = 0; //Computer move monitor
 const checkWinner = () => {
     if(p === 1 && c === 2 || p === 2 && c === 3 || p === 3 && c === 1){
         title.innerText = `You Won!`
+        title.id = `title2`;
     }
     else if(p === 1 && c === 1 || p === 2 && c === 2 || p === 3 && c === 3){
         title.innerText = `Draw`
+        title.id = `title`;
     }
     else{
         title.innerText = `Computer Won!!`
+        title.id = `title3`;
     }
 }
 
