@@ -35,6 +35,9 @@ controls.append(btn2);
 controls.append(btn1);
 controls.append(btn3);
 
+let playerScore = 0;    //score monitor(Player)
+let computerScore = 0;  //score monitor(Computer)
+
 let p = 0; //Player move monitor
 let c = 0; //Computer move monitor
 
@@ -42,6 +45,8 @@ const checkWinner = () => {
     if(p === 1 && c === 2 || p === 2 && c === 3 || p === 3 && c === 1){
         title.innerText = `You Won!`
         title.id = `title2`;
+        playerScore++;
+        label1.innerText = `YOU: ${playerScore}`;
     }
     else if(p === 1 && c === 1 || p === 2 && c === 2 || p === 3 && c === 3){
         title.innerText = `Draw`
@@ -50,6 +55,8 @@ const checkWinner = () => {
     else{
         title.innerText = `Computer Won!!`
         title.id = `title3`;
+        computerScore++;
+        label2.innerText = `COMPUTER: ${computerScore}`;
     }
 }
 
